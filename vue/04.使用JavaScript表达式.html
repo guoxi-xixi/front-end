@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用JavaScript表达式</title>
+</head>
+<body>
+    <!-- Vue 实例要控制的 DOM 区域 -->
+    <div id="app">
+        <p>{{number + 1}}</p>
+        <p>{{ok ? 'True' : 'False'}}</p>
+        <p>{{message.split('').reverse().join('')}}</p>
+        <p v-bind:id="'list-' + id">xxx</p>
+        <!-- v-bind 指令简写为英文的 : -->
+        <p :id="'list-' + id">xxx</p>
+        <p>{{user.name}}</p>
+    </div>
+    <!-- 导入 vue 脚本 -->
+    <script src="./lib/vue-2.6.14.js"></script>
+    <script>
+        // 创建 VM 实例对象
+        const vm = new Vue({
+            // 指定当前 vm 要控制的区域
+            el: '#app',
+            // 数据源
+            data: {
+                // int
+                number: 9,
+                // boolean
+                ok: false,
+                // str
+                message: 'ABC',
+                // id
+                id: 3,
+                // 用户的信息对象
+                user: {
+                    name: 'zs',
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js中括号操作属性</title>
+    <script>
+        window.onload = function(){
+            var oDiv = document.getElementById('div1');
+            var attr = 'color';
+            // 通过 [] 操作属性可以写变量
+            oDiv['style'][attr] = 'red';
+            
+            // 通过 innerHTML可以读写元素包括的内容
+
+            // 读取
+            alert(oDiv.innerHTML);
+
+            // 写
+            var oDiv2 = document.getElementById('div2');
+            // oDiv2.innerHTML = "这是第三个div元素"
+
+            oDiv2.innerHTML = "<a href='http://www.baidu.com'>百度</a>"
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">这是一个div元素</div>
+    <div id="div2"></div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件渲染指令</title>
+</head>
+
+<body>
+    <!-- Vue 实例要控制的 DOM 区域 -->
+    <div id="app">
+        <button @click="flag = !flag">Toggle Flag</button>
+
+        <!-- v-if 指令会动态地创建或移除 DOM 元素，从而控制元素在页面上的显示与隐藏; -->
+        <p v-if="flag">请求成功 --- 被 v-if控制</p>
+        <!-- v-show 指令会动态为元素添加或移除 style="display: none;" 样式，从而控制元素的显示与隐藏; -->
+        <p v-show="flag">请求成功 --- 被 v-show控制</p>
+    </div>
+    <!-- 导入 vue 脚本 -->
+    <script src="./lib/vue-2.6.14.js"></script>
+    <script>
+        // 创建 VM 实例对象
+        const vm = new Vue({
+            // 指定当前 vm 要控制的区域
+            el: '#app',
+            // 数据源
+            data: {
+                /* 
+                    flag 用来控制元素的显示与隐藏
+                    falg 为true 时元素显示
+                    flag 为flase 时元素隐藏
+                */
+                flag: true
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

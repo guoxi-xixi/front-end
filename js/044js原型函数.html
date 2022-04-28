@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型函数</title>
+    <script>
+        function Person(name,age,job){
+            this.name = name;
+            this.age = age;
+            this.job = job;
+        }
+        Person.prototype.showname = function(){
+            alert(this.name);
+        }
+        Person.prototype.showage = function(){
+            alert(this.age);
+        }
+        Person.prototype.showjob = function(){
+            alert(this.job);
+        }
+        var Tom = new Person('tom',18,'python');
+        var Jack = new Person('Jack',19,'java');
+
+        Tom.showname();
+        Jack.showname();
+
+        // 原型函数 共用同一个 类函数方法
+        alert(Tom.showname==Jack.showname); //true
+
+        Tom.showname = function(){
+            alert('我的姓名是：'+this.name);
+        }
+        alert(Tom.showname==Jack.showname);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件判断类型转换</title>
+    <script>
+        var a = 123;
+        var b = '123';
+        /* 
+        双等 == 会做类型转换，弹出相等
+        ==：称为等值符，当等号两边的类型相同时，直接比较值是否相等，若不相同，则先转化为类型相同的值，再进行比较；
+
+        if (a==b) {
+            alert('相等==');
+        }
+         */
+
+        // ===：称为等同符，当两边值的类型相同时，直接比较值，若类型不相同，直接返回false；
+        if (a===b) {
+            alert('相等===');
+        }
+        else{
+            alert('不相等===')
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

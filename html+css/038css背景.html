@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景</title>
+    <style>
+        .box1,.box2,.box3{
+            width: 320px;
+            height: 160px;
+            border: 5px solid #000;
+            margin: 50px;
+            font-size: 40px;
+            color: red;
+            text-align: center;
+            line-height: 160px;
+        }
+        .box1{
+            background-image: url(./images/bg.jpg);
+            background-color: gold;
+        }
+        .box2{
+            background-color: gold;
+        }
+        .box3{
+            background-image: url(./images/bg.jpg);
+
+            /* background-color: gold; */
+            /* 
+                background-repeat:
+                repeat: 重复平铺；
+                repeat-x: 水平重复平铺;
+                repeat-y: 垂直重复平铺;
+                no-repeat: 不重复;
+            */
+            /* background-repeat: repeat; */
+            /* background-repeat: repeat-x; */
+            /* background-repeat: repeat-y; */
+            /* background-repeat: no-repeat; */
+
+            /* background-position:
+                left top: 左居上
+                left center: 左居中;
+                left: 左居中;
+                left bottom: 左居下;
+
+                center top: 居中居上
+                center center: 居中居中;
+                center: 居中;
+                center bottom: 居中居下;
+
+                right top: 右居上
+                right center: 右居中;
+                right: 右居中;
+                right bottom: 右居下;
+
+                x y: 坐标;
+                10px 10px
+                -10px -10px; 
+            */
+            /* background-position: left; */
+
+            background: url(./images/bg.jpg) gold -20px -20px no-repeat;
+        }
+        .box4{
+            width: 100px;
+            height: 100px;
+            border: 5px solid #000;
+            margin: 50px;
+            background: url(./images/location_bg.jpg) -110px -150px no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">背景图片</div>
+    <div class="box2"><img src="./images/bg.jpg" alt="">背景图片</div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+</body>
+</html>

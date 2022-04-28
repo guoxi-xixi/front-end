@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js操作属性</title>
+    <script type="text/javascript">
+        window.onload = function(){
+            document.getElementById("div1").title = "确认这是一个div元素";
+
+            var oA = document.getElementById("link1");
+            oA.href = "http://www.baidu.com";
+            oA.title = "跳转到百度";
+        }
+    </script>
+</head>
+<body>
+    <div id="div1" class="div1" title="这是一个div元素">div元素</div>
+    <a href="#" id="link1">百度网</a>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<template>
+  <h3>Level Two 二级组件</h3>
+  <hr />
+  <level-three></level-three>
+</template>
+
+<script>
+import LevelThree from "./LevelThree.vue";
+
+export default {
+  name: "LevelTwo",
+  components: {
+    LevelThree,
+  },
+};
+</script>
+
+<style>
+</style>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css选择器2</title>
+    <style type="text/css">
+        .box1,.box2,.box3{
+            font-size: 24px;
+            height: 30px;
+        }
+        .box1{
+            color: red;
+            font-style: italic;
+        }
+        .box2{
+            color: blue;
+            font-weight: bold;
+        }
+        .box3{color: green;}
+        li{
+            list-style: none;
+        }
+        .li1,.li2,.li3{
+            font-size: 30px;
+            height: 36px;
+            text-indent: 60px;
+            color: blue;
+            text-decoration: none;
+        }
+        .li1:hover{
+            color: green;
+            text-decoration: underline;
+        }
+        .li2:before{
+            content: '行首文字';
+            color: red;
+        }
+        .li3::after{
+            content: '行尾文字';
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">组选择器,组选择器,组选择器</div>
+    <div class="box2">组选择器,组选择器,组选择器</div>
+    <div class="box3">组选择器,组选择器,组选择器</div>
+    <br><br><br>
+    <ul>
+        <li><a href=""  class="li1">伪类及伪元素选择器:hover</a></li>
+        <li><a href=""  class="li2">伪类及伪元素选择器:before</a></li>
+        <li><a href=""  class="li3">伪类及伪元素选择器:after</a></li>
+    </ul>
+</body>
+</html>

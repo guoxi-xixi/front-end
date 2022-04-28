@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内联元素</title>
+    <style>
+        .con,.con2{
+            width: 500px;
+            height: 300px;
+            border: 1px solid #000;
+            margin: 50px auto 0;
+            font-size: 0;
+        }
+        .con a{
+            background-color: gold;
+            width: 500px;
+            height: 300px;
+            padding: 0px 20px;  /* 上下padding会使背景覆盖 */
+            font-size: 20px;
+        }
+        .con2{
+            text-align: center;
+            line-height: 300px;
+        }
+        .con2 a{
+            font-size: 50px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <a href="#">这是第1个a标签</a>
+        <a href="#">这是第2个a标签</a>
+        <a href="#">这是第3个a标签</a>
+        <a href="#">这是第4个a标签</a>
+        <a href="#">这是第5个a标签</a>
+        <a href="#">这是第5个a标签</a>
+    </div>
+    <div class="con2">
+        <a href="#">这是1个a标签</a>
+    </div>
+</body>
+</html>

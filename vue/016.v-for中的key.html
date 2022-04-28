@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表渲染指令</title>
+</head>
+
+<body>
+    <!-- Vue 实例要控制的 DOM 区域 -->
+    <div id="app">
+        <!-- 添加用户的区域 -->
+        <div>
+            <input type="text" name="" id="" v-model="name">
+            <button @click="addNewUser">添加</button>
+        </div>
+        <!-- 用户列表区域 -->
+        <ul>
+            <li v-for="(user, index) in userList" :key="user.id">
+                <input type="checkbox" name="" id="">
+                姓名：{{user.name}}
+            </li>
+        </ul>
+    </div>
+    <!-- 导入 vue 脚本 -->
+    <script src="./lib/vue-2.6.14.js"></script>
+    <script>
+        // 创建 VM 实例对象
+        const vm = new Vue({
+            // 指定当前 vm 要控制的区域
+            el: '#app',
+            // 数据源
+            data: {
+                userList: [
+                    { id: 1, name: 'zs' },
+                    { id: 2, name: 'ls' },
+                ],
+                // 输入的用户名
+                name: '',
+                // 下一个可用的id值
+                nextId: 3
+            },
+            methods: {
+                // 点击了添加Button
+                addNewUser(){
+                    // unshift() 方法将新项添加到数组的开头,并返回新的长度
+                    this.userList.unshift({id: this.nextId, name: this.name})
+                    this.name = ''
+                    this.nextId++
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

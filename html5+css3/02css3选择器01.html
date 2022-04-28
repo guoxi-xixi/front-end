@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3 新选择器</title>
+    <style>
+        li{
+            background-color: gold;
+            margin-bottom: 10px;
+        }
+
+        /* 匹配元素类型为E且是父元素的第n个子元素 */
+        /* li:nth-child(1){
+            background-color: green;
+        } */
+        li:nth-child(2n){
+            background-color: green;
+        }
+
+        /* 匹配父元素的第n个类型为E的子元素 */
+        li:nth-of-type(2n+1){
+            background-color: pink;
+        }
+
+        .box div{
+            background-color: gold;
+            margin-bottom: 10px;
+        }
+
+        /*  第三个子元素，而且这个子元素的类型是div，就匹配  */
+        .box div:nth-child(3){
+            background-color: green;
+        }
+
+        /* 父级下面第三个div元素，碰到不同类型的元素跳 */
+        .box div:nth-of-type(3){
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h3>ul容器</h3>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+    <h3>div容器</h3>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <p>p标签</p>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+</body>
+</html>

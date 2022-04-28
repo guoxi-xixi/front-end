@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js数组去重</title>
+    <script>
+        var arr = [1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9];
+        var arr2 = [];
+
+        for(var i=0;i<arr.length;i++){
+            if (arr.indexOf(arr[i])==i) {
+                arr2.push(arr[i]);
+            }
+        }
+        alert(arr2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

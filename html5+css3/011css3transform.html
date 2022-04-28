@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+    <style>
+        .box1,.box2,.box3,.box4{
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            margin: 50px auto 0;
+            transition: all 1s ease;
+        }
+        .box1:hover{
+            transform: translate(50px,50px);
+        }
+        .box2:hover{
+            transform: scale(0.5,0.2);
+        }
+        .box3:hover{
+            transform: rotate(90deg);
+        }
+        .box4:hover{
+            transform: skew(15deg,45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">translate(x,y) 设置盒子位移</div>
+    <div class="box2">scale(x,y) 设置盒子缩放</div>
+    <div class="box3">rotate(deg) 设置盒子旋转</div>
+    <div class="box4">skew(x-angle,y-angle) 设置盒子斜切</div>
+</body>
+</html>

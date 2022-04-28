@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>h5音频视频</title>
+</head>
+<body>
+    <!-- <audio src="./source/audio.mp3" controls autoplay loop preload muted></audio> -->
+    <audio controls autoplay loop preload muted>
+        <!-- source标签的作用是提供多个媒体文件地址，如果一个地址的文件不兼容，就使用下一个地址。 -->
+        <source src="./source/audio.mp3" type="">
+        <source src="./source/audio02.wav" type="">
+    </audio>
+    <p>
+        audio & video 对应属性<br>
+        对应属性：<br>
+        1、autoplay 自动播放<br>
+        2、controls 显示播放器<br>
+        3、loop 循环播放<br>
+        4、preload 预加载<br>
+        5、muted 静音<br>
+    </p>
+    <p>
+        video特有：<br>
+        1、width 宽度 eg:width="600"<br>
+        2、height 高度 eg:height="400"<br>
+        3、Poster 预览图 eg:poster="./images/fengche.png"<br>
+    </p>
+    <br>
+    <video controls autoplay loop preload muted width="600" height="400" poster="./images/fengche.png">
+        <!-- source标签的作用是提供多个媒体文件地址，如果一个地址的文件不兼容，就使用下一个地址。 -->
+        <source src="./source/mov.mp4" type="">
+        <source src="./source/mov.ogg" type="">
+    </video>
+</body>
+</html>

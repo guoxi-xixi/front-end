@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js字符串处理方法</title>
+    <script>
+        var name = 'tom';
+        var age = 18;
+        // 字符串合并操作：“ + ”
+        // alert("名字："+name+"年龄："+age);
+
+        var a = 12;
+        var b = '23';
+        var c = 5.6;
+        var d = '123abcde';
+        var e = 4.2;
+
+        // alert(a+b);     // 1223
+
+        // parseInt() 将数字字符串转化为整数
+        // alert(parseInt(a)+parseInt(b)); //35
+
+        // alert(parseInt(c)); //5
+
+        // alert(parseInt(d));     //123
+
+        // parseFloat() 将数字字符串转化为小数
+        // alert(parseFloat(c)+parseFloat(e)); //9.8
+
+        var f = 0.1;
+        var g = 0.2;
+
+        // alert(parseFloat(f)+parseFloat(g)); //此处是bug:0.30000000000000004
+
+        // 相加等于0.30000000004的问题，解决方法是先乘以100，再除以100
+        // alert((parseFloat(f)*100 + parseFloat(g)*100)/100); // 0.3
+
+        var str = '2022-03-27';
+        // split() 把一个字符串分隔成字符串组成的数组
+        var arr1 = str.split('-');
+        var arr2 = str.split('');
+
+        console.log(arr1);  //['2022', '03', '27']
+        console.log(arr2);  //['2', '0', '2', '2', '-', '0', '3', '-', '2', '7']
+
+        var str1 = '#div1';
+        var str2 = '.div1';
+        // charAt() 获取字符串中的某一个字符
+        var str3 = str1.charAt(0);
+        var str4 = 'Microsoft yahei';
+        
+        if (str3=='#') {
+            // alert('id选择器');
+        }
+        // indexOf() 查找字符串是否含有某字符
+        var num = str4.indexOf('yahei');
+        // alert(num); //找到就弹出字符串出现的位置：10
+        var num1 = str4.indexOf('qihei');
+        // alert(num1);    //没有找到就弹出 -1
+
+        // substring() 截取字符串 用法： substring(start,end)（不包括end）
+        var str5 = str4.substring(10,14);   //从第10截到第14个,yahe
+        // alert(str5);    //yahe
+        var str6 = str4.substring(10);  //从第10截到最后一个
+        // alert(str6);    //yahei
+
+        // toUpperCase() 字符串转大写
+        var str7 = str4.toUpperCase();
+        // alert(str7);  //MICROSOFT YAHEI
+        // toLowerCase() 字符串转小写
+        var str8 = str4.toLowerCase();
+        alert(str8);    //microsoft yahei
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

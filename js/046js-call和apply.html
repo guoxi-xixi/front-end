@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call和apply</title>
+    <script>
+        function aa(a,b){
+            alert('我的this是：'+this+',我的a是：'+a+',我的b是：'+b);
+        }
+        // aa(2,3);    //我的this是：[object Window],我的a是：2,我的b是：3
+        // aa.call(2,3);   //我的this是：2,我的a是：3,我的b是：undefined
+        // aa.call('abc',2,3); //我的this是：abc,我的a是：2,我的b是：3
+        
+        
+        aa.apply('abc',[2,3]); //我的this是：abc,我的a是：2,我的b是：3  
+        
+        // apply 入参必须为列表/数组
+        // aa.apply('abc',2,3,); //CreateListFromArrayLike called on non-object
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

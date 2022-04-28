@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js return关键字</title>
+    <script>
+        window.onload = function(){
+            var oVal01 = document.getElementById('input01');
+            var oVal02 = document.getElementById('input02');
+            var oBtn = document.getElementById('btn');
+
+            /*
+            写入指
+            oVal01.value = 10;
+            oVal02.value = 5;
+            */
+
+            function add(a,b) {
+                var rs = parseInt(a) + parseInt(b);
+                // return 返回函数设定的值，同时结束函数的运行
+                alert('相加~~~');
+                return rs;
+                alert('相加!!!');   // return后面的不执行
+            }
+            oBtn.onclick = function(){
+                var val01 = oVal01.value;
+                var val02 = oVal02.value;
+
+                var rs = add(val01,val02);
+                alert(rs);
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="input01">
+    <input type="text" name="" id="input02">
+    <input type="button" value="相加" id="btn">
+</body>
+</html>

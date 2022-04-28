@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js数组方法</title>
+    <script>
+        var arr = [1,2,3,4];
+
+        // join() 将数组成员通过一个分隔符合并成字符串
+        var str1 = arr.join("-");
+        var str2 = arr.join("");
+
+        // alert(str1);    // 1-2-3-4
+        // alert(str2);    // 1234
+
+        // push() 和 pop() 从数组最后增加成员或删除成员
+        arr.push(5);
+        // alert(arr);     // 1,2,3,4,5
+
+        arr.pop();
+        // alert(arr);       // 1,2,3,4
+
+        // unshift()和 shift() 从数组前面增加成员或删除成员
+        arr.unshift(0);
+        // alert(arr);         // 0,1,2,3,4
+
+        arr.shift();
+        // alert(arr)            // 1,2,3,4
+
+        // reverse() 将数组反转
+        arr.reverse();
+        // alert(arr);             // 4,3,2,1
+
+        // indexOf() 返回数组中元素第一次出现的索引值
+        var aList = ['a','b','c','d','a','b','c','d'];
+        
+        var num = aList.indexOf('b');
+        // alert(num);     // 1
+
+        // splice() 在数组中增加或删除成员
+        // splice(2,1,7,8,9); //从第2个元素开始，删除1个元素，然后在此位置增加'7,8,9'三个元素
+        // aList.splice(2,1);
+        // alert(aList);       // a,b,d,a,b,c,d
+
+        // aList.splice(2,1,'e');
+        // alert(aList);          // a,b,e,d,a,b,c,d
+
+        aList.splice(4,4,'f','g','h','i');
+        alert(aList);       // a,b,c,d,f,g,h,i
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

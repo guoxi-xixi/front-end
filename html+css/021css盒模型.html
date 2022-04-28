@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css盒模型</title>
+    <style type="text/css">
+        .box{
+            /* 盒子模型的宽高、背景色 */
+            width: 200px;
+            height: 100px;
+            background-color: gold;
+
+            /* 盒子模型的边框：border */
+
+            /* border-top-width: 10px; */
+                 /* 设置顶部边框颜色为红色 */
+            /* border-top-color: #000; */
+                 /* 设置顶部边框粗细为10px */
+            /* 线型：实线：solid 虚线：dashed 点线：dotted */
+            /* border-top-style: solid; */
+                /* 设置顶部边框的线性为实线 */
+            
+
+            /* border-top: 10px solid #000;
+            border-right: 10px dashed #000;
+            border-bottom: 10px dotted #000;
+            border-left: 10px solid #000; */
+
+            /* 四个边如果设置一样，可以将四个边的设置合并成一句 */
+            border: 10px solid #000;
+
+            /* 盒子模型的内间距：padding */
+            
+            /* 设置顶部内间距20px */
+            /* padding-top:20px; */
+
+            /* 设置左边内间距30px */      
+            /* padding-left:30px; */
+
+            /* 设置右边内间距40px */     
+            /* padding-right:40px;  */
+
+            /* 设置底部内间距50px */    
+            /* padding-bottom:50px;    */
+
+            /* 分别设置上 右 下 左 的值 ，顺时针设置 */
+            /* padding: 20px 100px 200px 40px; */
+
+            /* 分别设置 上 左右 下 的值 */
+            /* padding: 20px 100px 200px; */
+
+            /* 分别设置 上下 左右 的值 */
+            /* padding: 20px 100px; */
+
+            /* 同时设置四个边的值 */
+            padding: 100px;
+
+
+            /* 盒子模型的外间距：margin */
+
+            /* 设置顶部内间距20px */
+            /* margin-top: 20px; */
+
+            /* 设置左边内间距30px */      
+            /* margin-left:30px; */
+
+            /* 设置右边内间距40px */     
+            /* margin-right:40px;  */
+
+            /* 设置底部内间距50px */    
+            /* margin-bottom:50px;    */
+
+            /* 分别设置上 右 下 左 的值 ，顺时针设置 */
+            /* margin: 20px 100px 200px 40px; */
+
+            /* 分别设置 上 左右 下 的值 */
+            /* margin: 20px 100px 200px; */
+
+            /* 分别设置 上下 左右 的值 */
+            /* margin: 20px 100px; */
+
+            /* 同时设置四个边的值 */
+            /* margin: 100px; */
+
+            /* 设置盒子模型水平居中 */
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        元素在页面中显示成一个方块，类似一个盒子，CSS盒子模型就是使用现实中盒子来做比喻，帮助我们设置元素对应的样式
+    </div>
+    <div class="box">
+        元素在页面中显示成一个方块，类似一个盒子，CSS盒子模型就是使用现实中盒子来做比喻，帮助我们设置元素对应的样式
+    </div>
+</body>
+</html>

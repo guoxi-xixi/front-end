@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单</title>
+</head>
+<body>
+    <h3>用户注册</h3>
+    <!-- form定义一个表单区域,action属性定义表单数据提交的地址，method属性定义提交的方式。 -->
+    <form action="https://wwww.baidu.com" method="get">
+        <br>
+
+        <div>
+            <!-- label标签定义表单控件的文字标注，input类型为text定义了一个单行文本输入框 -->
+            <label for="userName">用户名：</label>
+            <input type="text" name="userName" id="userName">
+        </div>
+
+        <br>
+
+        <div>
+            <!-- input类型为password定义了一个密码输入框 -->
+            <label for="pwd">密码：</label>
+            <input type="password" name="pwd" id="pwd">
+        </div>
+
+        <br>
+
+        <div>
+            <!-- input类型为radio定义了单选框 -->
+            <label for="">性别：</label>
+            <input type="radio" name="gender" id="male" value="0"><label for="male">男</label>
+            <input type="radio" name="gender" id="female" value="1"><label for="female">女</label>
+        </div>
+
+        <br>
+
+        <div>
+            <!-- input类型为checkbox定义了单选框 -->
+            <label for="">爱好：</label>
+            <input type="checkbox" name="like" id="like" value="0"> 游戏
+            <input type="checkbox" name="like" id="like" value="1"> 篮球
+            <input type="checkbox" name="like" id="like" value="2"> 电影
+            <input type="checkbox" name="like" id="like" value="3"> 跑步
+            <input type="checkbox" name="like" id="like" value="4"> 唱歌
+        </div>
+
+        <br>
+
+        <div>
+            <!-- input类型为file定义上传照片或文件等资源 -->
+            <label for="">照片：</label>
+            <input type="file" name="image">
+        </div>
+
+        <br>
+
+        <div>
+            <!-- textarea定义多行文本输入 -->
+            <label for="">描述：</label>
+            <textarea name="info"></textarea>
+        </div>
+
+        <br>
+
+        <div>
+            <!-- select定义下拉列表选择 -->
+            <label for="">籍贯：</label>
+            <select name="homeTown" id="">
+                <option value="0">北京</option>
+                <option value="1">山西</option>
+                <option value="2">陕西</option>
+                <option value="3">上海</option>
+                <option value="4">天津</option>
+            </select>
+        </div>
+
+        <br>
+
+        <div>
+            <!-- input类型为submit定义提交按钮,
+                还可以用图片控件代替submit按钮提交，一般会导致提交两次，不建议使用。如 <input type="image" src="xxx.gif" -->
+            <input type="submit" name="" value="提交">
+            <!-- input类型为reset定义重置按钮 -->
+            <input type="reset" name="" value="重置">
+            <!--  -->
+            <input type="button" name="button" id="button" value="按钮">
+            <input type="hidden" name="hid" value="100000">
+        </div>
+    </form>
+</body>
+</html>

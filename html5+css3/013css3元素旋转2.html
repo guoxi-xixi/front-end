@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform-origin</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            float: left;
+            margin: 30px;
+            transition: all 500ms ease;
+        }
+        div:nth-child(1){
+            transform-origin: left center;
+        }
+        div:nth-child(2){
+            transform-origin: right bottom;
+        }
+        div:nth-child(3){
+            transform-origin: 50px 50px;
+        }
+        div:hover{
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div>transform-origin: left center;</div>
+    <div>transform-origin: right bottom;</div>
+    <div>transform-origin: 50px 50px;</div>
+</body>
+</html>

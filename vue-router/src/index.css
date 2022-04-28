@@ -1,0 +1,19 @@
+:root {
+  /* font-size: 12px; */
+}
+
+body {
+  padding: 8px;
+}
+/* router.js 默认类名  router-link-active  */
+.router-link-active {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+
+.router-active{
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+}

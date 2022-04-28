@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性绑定指令</title>
+</head>
+
+<body>
+    <!-- Vue 实例要控制的 DOM 区域 -->
+    <div id="app">
+        <input type="checkbox" name="" id="1">
+        <label for="1">label</label>
+    </div>
+    <!-- 导入 vue 脚本 -->
+    <script src="./lib/vue-2.6.14.js"></script>
+    <script>
+        // 创建 VM 实例对象
+        const vm = new Vue({
+            // 指定当前 vm 要控制的区域
+            el: '#app',
+            // 数据源
+            data: {
+
+            },
+            // v-on 绑定的事件处理函数，需要在 methods 节点中进行声明:
+            methods: {
+
+            },
+            // 过滤器(Filters)常用于文本的格式化
+            filters: {  // 在filters下定义过滤器
+
+            }
+        })
+    </script>
+</body>
+
+</html>

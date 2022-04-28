@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器</title>
+    <script>
+        window.onload = function(){
+            var num1 = document.getElementById('num1');
+            var num2 = document.getElementById('num2');
+            var btn = document.getElementById('btn');
+            var fuhao = document.getElementById('fuhao');
+            
+            function add(a,b) {
+                var result = (parseFloat(a)*100 + parseFloat(b)*100)/100;
+                return result;
+            }
+            function jian(a,b) {
+                var result = (parseFloat(a)*100 - parseFloat(b)*100)/100;
+                return result;
+            }
+            function cheng(a,b) {
+                var result = (parseFloat(a)*100 * parseFloat(b)*100)/10000;
+                return result;
+            }
+            function chu(a,b) {
+                var result = (parseFloat(a)*100) / (parseFloat(b)*100);
+                return result;
+            }
+
+            btn.onclick = function () {
+                var n1 = num1.value;
+                var n2 = num2.value;
+                var fh = fuhao.value;
+
+                if (n1=='' || n2=='') {
+                    alert('输入框不能为空！');
+                    return;
+                }
+                if (isNaN(n1) || isNaN(n2)) {
+                    alert('请输入数字！');
+                    return;
+                }
+                
+                switch (fh) {
+                    case '0':
+                        var rs = add(n1,n2);
+                        alert(rs);
+                        break;
+                    case '1':
+                        var rs = jian(n1,n2);
+                        alert(rs);
+                        break;
+                    case '2':
+                        var rs = cheng(n1,n2);
+                        alert(rs);
+                        break;
+                    case '3':
+                        var rs = chu(n1,n2);
+                        alert(rs);
+                        break;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="num1" id="num1">
+    <select name="fuhao" id="fuhao">
+        <option value="0">+</option>
+        <option value="1">-</option>
+        <option value="2">*</option>
+        <option value="3">÷</option>
+    </select>
+    <input type="text" name="num2" id="num2">
+    <input type="button" value="计算" id="btn">
+</body>
+</html>

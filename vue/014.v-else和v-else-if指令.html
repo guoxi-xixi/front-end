@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-else和v-else-if指令</title>
+</head>
+<body>
+    <!-- Vue 实例要控制的 DOM 区域 -->
+    <div id="app">
+        <p v-if="num > 0.5">随机数 > 0.5</p>
+        <p v-else>随机数 ≤ 0.5</p>
+        <hr>
+        <p v-if="type === 'A'">优秀</p>
+        <p v-else-if="type === 'B'">良好</p>
+        <p v-else-if="type === 'C'">一般</p>
+        <p v-else>差</p>
+    </div>
+    <!-- 导入 vue 脚本 -->
+    <script src="./lib/vue-2.6.14.js"></script>
+    <script>
+        // 创建 VM 实例对象
+        const vm = new Vue({
+            // 指定当前 vm 要控制的区域
+            el: '#app',
+            // 数据源
+            data: {
+               num: Math.random(),
+               type: 'A'
+            },
+            methods: {
+                
+            }
+        })
+    </script>
+</body>
+</html>

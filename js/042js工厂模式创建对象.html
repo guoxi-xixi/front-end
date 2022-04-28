@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js工厂模式创建对象</title>
+    <script>
+        function Person(name, age, job) {
+            var o = new Object();
+
+            o.name = name;
+            o.age = age;
+            o.job = job;
+
+            o.showname = function(){
+                alert(this.name);
+            };
+            o.showage = function(){
+                alert(this.age);
+            };
+            o.showjob = function(){
+                alert(this.job);
+            };
+
+            return o;
+        }
+        var Tom = Person('tom', 18, 'python');
+        var jack = Person('jack',19,'java');
+        Tom.showname();
+        jack.showname();
+
+        // 工厂函数，创建的都是新对象，不共用同一份内存
+        alert(Tom.showname==jack.showname); //false
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

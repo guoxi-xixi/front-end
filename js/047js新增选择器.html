@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js新增选择器</title>
+    <script>
+        window.onload = function(){
+            var aDiv = document.querySelector('#div');
+            var aLi = document.querySelectorAll('.list li');
+
+            
+            aDiv.onclick = function(){
+                aDiv.style.color = 'green';
+                alert('颜色切换成功！')
+            }
+            for(var i=0;i<aLi.length;i++){
+                (function(i){
+                    aLi[i].onclick=function(){
+                        alert('第'+i+'个li元素');
+                    }
+                })(i);
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div id="div">这是一个div元素</div>
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+</body>
+</html>

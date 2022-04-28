@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过滤器的基本使用</title>
+</head>
+
+<body>
+    <!-- Vue 实例要控制的 DOM 区域 -->
+    <div id="app">
+        <!-- 过滤器应该被添加在 JavaScript 表达式的尾部，由“管道符”进行调用 -->
+        <!-- 过滤器可以用在两个地方:插值表达式和 v-bind 属性绑定 -->
+        <p :title="title | capitalize">{{message | capitalize}}</p>
+    </div>
+    <!-- 导入 vue 脚本 -->
+    <script src="./lib/vue-2.6.14.js"></script>
+    <script>
+        // 创建 VM 实例对象
+        const vm = new Vue({
+            // 指定当前 vm 要控制的区域
+            el: '#app',
+            // 数据源
+            data: {
+                message: 'hello vue.js',
+                title: 'title info'
+            },
+            methods: {
+
+            },
+            // 过滤器(Filters)常用于文本的格式化
+            filters: {  // 在filters下定义过滤器
+                capitalize(str) {   // 把首字母转为大写的过滤器
+                    return str.charAt(0).toUpperCase() + str.slice(1)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-model指令的修饰符</title>
+</head>
+
+<body>
+    <!-- Vue 实例要控制的 DOM 区域 -->
+    <div id="app">
+        <!-- .trim 自动过滤首位输入的空白字符 -->
+        姓名：<input type="text" v-model.trim="username">
+        <hr>
+        <!-- .number 自动将用户输入的值转为 数值 类型 -->
+        年龄：<input type="text" v-model.number="age">
+        <hr>
+        <!-- .lazy 在失去输入框焦点时才变更 -->
+        地址：<input type="text" v-model.lazy="addr">
+    </div>
+    <!-- 导入 vue 脚本 -->
+    <script src="./lib/vue-2.6.14.js"></script>
+    <script>
+        // 创建 VM 实例对象
+        const vm = new Vue({
+            // 指定当前 vm 要控制的区域
+            el: '#app',
+            // 数据源
+            data: {
+                username: 'zs',
+                age: 28,
+                addr: '山西省'
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

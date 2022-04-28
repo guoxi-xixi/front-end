@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform:perspective+rotate</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: gold;
+            margin: 50px auto 0;
+            transition: all 1s ease;
+            /* transform-style flat | preserve-3d 设置盒子是否按3d空间显示 */
+            transform-style: preserve-3d;
+            /* 解决rotateX bug */
+            /* transform:perspective(800px) rotateX(0deg); */
+        }
+        .box:hover{
+            /* 
+            旋转方向判断			
+			1、x轴向右、y轴向下、z轴向屏幕外
+			2、让轴向对着自己，顺时针方向就是该轴向的旋转方向
+            */
+
+            /* perspective 设置透视距离 */
+            transform: perspective(800px) rotateX(-30deg);
+            /* transform: perspective(800px) rotateY(50deg); */
+            /* transform: perspective(800px) rotateZ(45deg); */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        元素旋转：
+        transform-style flat | preserve-3d 设置盒子是否按3d空间显示
+        perspective 设置透视距离
+        translateX、translateY、translateZ 设置三维移动
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js类的继承</title>
+    <script>
+        function Fclass (name,age){
+            this.name = name;
+            this.age = age;
+        }
+        Fclass.prototype.showname = function(){
+            alert(this.name);
+        }
+        Fclass.prototype.showage = function(){
+            alert(this.age);
+        }
+
+        // 属性用call或者aplply方式来继承
+        function Sclass(name,age,job){
+            Fclass.call(this, name, age);
+            this.job = job;
+        }
+
+        // 方法继承：将父类的一个实例赋值给子类的原型属性
+        Sclass.prototype = new Fclass();
+        Sclass.prototype.showjob = function(){
+            alert(this.job);
+        }
+
+        var Tom = new Sclass('tom',18,'python');
+
+        Tom.showname();
+        Tom.showage();
+        Tom.showjob();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

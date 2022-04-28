@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js闭包</title>
+    <script>
+        /* 
+        // 函数嵌套函数，内部函数可以引用外部函数的参数和变量，参数和变量不会被垃圾回收机制收回
+        function aa(b) {
+            var a = 12;
+            function bb() {
+                alert(a);
+                alert(b);
+            }
+            return bb;
+        }
+        var cc = aa(24);
+        cc();
+         */
+
+        
+        // 改写成封闭函数的形式
+        var cc = (function (b) {
+            var a = 12;
+            function bb() {
+                alert(a);
+                alert(b);
+            }
+            return bb;
+        })(24);
+        cc();
+        
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

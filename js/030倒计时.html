@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时</title>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div');
+
+            timeLeft();
+            setInterval(timeLeft,1000);
+
+
+            function timeLeft() {
+                var now = new Date();
+
+                var feture = new Date(2022,3,29,1,22,40); //年,月，日，时，分，秒
+                // alert('now:'+now+','+'feture:'+feture+parseInt((feture-now)));  //2678597745
+                var lefts = parseInt((feture-now)/1000);     //毫秒
+                var day = parseInt(lefts/86400);            //1天=24h=86400s
+                var hour = parseInt((lefts%86400)/3600);      //1h=3600s
+                var minute = parseInt(((lefts%86400)%3600)/60); //1m=60s
+                var second = lefts%60;
+
+                oDiv.innerHTML = '距离2022年03月29日凌晨00:30:00还有'+day+'天'+chDouble(hour)+'时'+chDouble(minute)+'分'+chDouble(second)+'秒';
+                if (lefts<=0) {
+                    window.location.href = 'http://www.baidu.com';
+                }
+                
+            }
+            
+            
+            function chDouble(num) {
+                if (num<10) {
+                    return '0'+num;
+                } else {
+                    return num;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div"></div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>按键修饰符</title>
+</head>`
+
+<body>
+    <!-- Vue 实例要控制的 DOM 区域 -->
+    <div id="app">
+        <input type="text" name="" id="" @keyup.enter="submit" @keyup.esc="clearInput">
+    </div>
+    <!-- 导入 vue 脚本 -->
+    <script src="./lib/vue-2.6.14.js"></script>
+    <script>
+        // 创建 VM 实例对象
+        const vm = new Vue({
+            // 指定当前 vm 要控制的区域
+            el: '#app',
+            // 数据源
+            data: {
+
+            },
+            methods: {
+                // 获取文本框的最新值
+                submit(e) {
+                    console.log('按下了enter键，最新的值是：' + e.target.value)
+                },
+                // 清空文本框输入的值
+                clearInput(e) {
+                    e.target.value = ''
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动</title>
+    <style>
+        .con,.con1,.con2{
+            width: 300px;
+            border: 1px solid #000;
+            margin: 100px auto 0;
+            font-size: 0;
+        }
+        .con a,.con1 a{
+            width: 50px;
+            height: 50px;
+            text-decoration: none;
+            background-color: gold;
+            text-align: center;
+            line-height: 50px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        .con a{
+            /* 转化为内联块元素的方法 */
+            display: inline-block;
+        }
+        .con1 a{
+            /* 使用浮动的方法 */
+            float: left;
+        }
+        .clearfix::before,.clearfix::after{
+            content: "";
+            display: table;
+        }
+        .clearfix::after{
+            clear: both;
+        }
+        .con2 span{
+            font-size: 16px;
+            background-color: gold;
+            margin: 10px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <a href="">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">5</a>
+        <a href="">6</a>
+        <a href="">7</a>
+        <a href="">8</a>
+        <a href="">9</a>
+        <a href="">10</a>
+        <a href="">11</a>
+        <a href="">12</a>
+    </div>
+    <div class="con1 clearfix">
+        <a href="">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">5</a>
+        <a href="">6</a>
+        <a href="">7</a>
+        <a href="">8</a>
+        <a href="">9</a>
+        <a href="">10</a>
+        <a href="">11</a>
+        <a href="">12</a>
+        <!-- <div style="clear: both;"></div> -->
+    </div>
+    <div class="con2 clearfix">
+        <span>span元素</span>
+        <span>span元素</span>
+        <span>span元素</span>
+        <span>span元素</span>
+        <span>span元素</span>
+    </div>
+</body>
+</html>

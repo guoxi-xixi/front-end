@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js换肤-可控制</title>
+    <link rel="stylesheet" href="./css/1.css" id="link1">
+    <script>
+        function skin01() {
+            var oLink = document.getElementById('link1');
+            oLink.href = './css/1.css';
+        }
+        function skin02() {
+            var oLink = document.getElementById('link1');
+            oLink.href = './css/2.css';
+        }
+        window.onload = function(){
+            var oBtn01 = document.getElementById('btn01');
+            var oBtn02 = document.getElementById('btn02');
+
+            oBtn01.onclick = skin01;
+            oBtn02.onclick = skin02;
+        }
+    </script>
+</head>
+<body>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <!-- 行间样式，不推荐 -->
+    <!-- <input type="button" value="皮肤01" id="btn01" onclick="skin01()">
+    <input type="button" value="皮肤02" id="btn02" onclick="skin02()"> -->
+
+    <input type="button" value="皮肤01" id="btn01">
+    <input type="button" value="皮肤02" id="btn02">
+</body>
+</html>

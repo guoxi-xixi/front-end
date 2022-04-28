@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通过标签获取元素</title>
+    <script>
+        window.onload = function(){
+            // var aLi = document.getElementsByTagName('li');
+
+            // alert(aLi.length);
+
+            var oList = document.getElementById('list01');
+            var aList = oList.getElementsByTagName('li');
+            alert(aList.length);
+
+            aList[0].style.background = 'gold';
+            aList[1].style.background = 'green';
+            aList[2].style.background = 'blue';
+        }
+    </script>
+</head>
+<body>
+    <ul id="list01">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+    <ul id="list02">
+        <li>9</li>
+        <li>10</li>
+        <li>11</li>
+        <li>12</li>
+        <li>13</li>
+    </ul>
+</body>
+</html>

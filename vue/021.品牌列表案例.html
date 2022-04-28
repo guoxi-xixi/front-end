@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>品牌列表案例</title>
+  <!-- 导入 bootstrap 的样式表 -->
+  <!-- https://v4.bootcss.com/docs/components/forms/#switches -->
+  <link rel="stylesheet" href="./lib/bootstrap.css" />
+  <style>
+    :root {
+      font-size: 13px;
+    }
+
+    body {
+      padding: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 卡片区域 -->
+    <div class="card">
+      <h5 class="card-header">添加品牌</h5>
+      <div class="card-body">
+        <!-- 添加品牌的表单 -->
+        <form class="form-inline" @submit.prevent>
+          <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">品牌名称</div>
+            </div>
+            <!-- 文本输入框 -->
+            <input type="text" class="form-control" placeholder="请输入品牌名" v-model.trim="brandName"
+              @keyup.esc="brandName = ''" />
+          </div>
+
+          <!-- 提交表单的按钮 -->
+          <button type="submit" class="btn btn-primary mb-2" @click="addNewBrand">添加品牌</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- 品牌列表 -->
+    <table class="table table-bordered table-striped mt-2">
+      <thead>
+        <tr>
+          <th>序号</th>
+          <th>品牌名称</th>
+          <th>状态</th>
+          <th>创建时间</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <!-- 表格的主体区域 -->
+      <tbody>
+        <!-- TODO：循环渲染表格的每一行数据 -->
+        <tr v-for="(item, index) in barndList" :key="item.id">
+          <!-- <td>{{item.id}}</td> -->
+          <td>{{index + 1}}</td>
+          <td>{{item.brandName}}</td>
+          <!-- <td>{{item.state}}</td> -->
+          <td>
+            <div class="custom-control custom-switch">
+              <input type="checkbox" class="custom-control-input" :id="item.id" v-model="item.state">
+              <label class="custom-control-label" :for="item.id" v-if="item.state">已启用</label>
+              <label class="custom-control-label" :for="item.id" v-else>已禁用</label>
+            </div>
+          </td>
+          <td>{{item.addTime | dataFormat}}</td>
+          <td>
+            <a href="#" @click.prevent="removeBrand(item.id)">删除</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 创建vue实例 -->
+  <script src="./lib/vue-2.6.14.js"></script>
+  <script>
+    // 全局过滤器
+    // 第一个参数为 管道符 前面待处理的值
+    Vue.filter('dataFormat', (dateStr) => {
+      const dt = new Date(dateStr)
+
+      const y = dt.getFullYear()
+      const m = padZero(dt.getMonth() + 1)
+      const d = padZero(dt.getDay())
+
+      const hh = padZero(dt.getHours())
+      const mm = padZero(dt.getMinutes())
+      const ss = padZero(dt.getSeconds())
+
+      // return 'YYYY-MM-DD hh-mm-ss'
+      return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+    })
+
+    // 补零的函数
+    function padZero(n) {
+      return n > 9 ? n : '0' + n
+    }
+
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        brandName: '',
+        nextId: 4,
+        barndList: [
+          { id: 1, brandName: '宝马', state: true, addTime: new Date() },
+          { id: 2, brandName: '奔驰', state: true, addTime: new Date() },
+          { id: 3, brandName: '奥迪', state: true, addTime: new Date() },
+        ]
+      },
+      methods: {
+        addNewBrand() {
+          // 判断品牌名称是否为空
+          if (!this.brandName) return alert('品牌名称不能为空！')
+          // 添加新的品牌数据
+          this.barndList.push({
+            id: this.nextId,
+            brandName: this.brandName,
+            state: true,
+            addTime: new Date(),
+          })
+          // 重置文本框输入值
+          this.brandName = '',
+            // 让 nextId 自增 +1 
+            this.nextId++
+        },
+        // 删除品牌 根据id删除对应的数组
+        removeBrand(id) {
+          // 借助数组的 filter 方法过滤
+          // 过滤出 不等于 当前选中id对应的数组，组成新的数组 -> 选中3，那么id不等于3的数组组成新的数组
+          this.barndList = this.barndList.filter((x) => {
+            return x.id !== id
+          })
+        }
+      },
+      filters: {
+
+      }
+    })
+  </script>
+</body>
+
+</html>

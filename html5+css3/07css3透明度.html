@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3 透明度</title>
+    <style>
+        body{
+            background-color: cyan;
+        }
+        .box,.box2{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto 0;
+            border: 2px solid #000;
+            border-radius: 50%;
+            background-color: gold;
+            text-align: center;
+            line-height: 200px;
+        }
+        .box{
+            /* 设置透明度 */
+            opacity: 0.3;
+            /* 兼容ie */
+            filter: alpha(opacity=30);
+        }
+        .box2{
+            border: 2px solid rgba(0, 0, 0, 0.3);
+            background-color: rgba(255, 215, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">床前明月光</div>
+    <div class="box2">床前明月光</div>
+</body>
+</html>

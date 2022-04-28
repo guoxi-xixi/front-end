@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background-size</title>
+    <style>
+        .box1{
+            float: left;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 20px;
+            background: url(./images/apple.png) no-repeat;
+
+            /* 
+            background-size:
+                ● length：用长度值指定背景图像大小。不允许负值。
+                ● percentage：用百分比指定背景图像大小。不允许负值。
+                ● auto：背景图像的真实大小。
+                ● cover：将背景图像等比缩放到完全覆盖容器，背景图像有可能超出容器。
+                ● contain：将背景图像等比缩放到宽度或高度与容器的宽度或高度相等，背景图像始终被包含在容器内。
+            */
+            /* background-size: 200px 200px; */
+
+            background-size: 100%;
+        }
+        .box2{
+            float: left;
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 20px;
+            background: url(./images/003.jpg) no-repeat;
+
+            /* 
+            background-size:
+                ● length：用长度值指定背景图像大小。不允许负值。
+                ● percentage：用百分比指定背景图像大小。不允许负值。
+                ● auto：背景图像的真实大小。
+                ● cover：将背景图像等比缩放到完全覆盖容器，背景图像有可能超出容器。
+                ● contain：将背景图像等比缩放到宽度或高度与容器的宽度或高度相等，背景图像始终被包含在容器内。
+            */
+            background-size: cover;
+
+            /* background-size: 100%; */
+        }
+        .box3{
+            float: left;
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 20px;
+            background: url(./images/003.jpg) no-repeat;
+
+            /* 
+            background-size:
+                ● length：用长度值指定背景图像大小。不允许负值。
+                ● percentage：用百分比指定背景图像大小。不允许负值。
+                ● auto：背景图像的真实大小。
+                ● cover：将背景图像等比缩放到完全覆盖容器，背景图像有可能超出容器。
+                ● contain：将背景图像等比缩放到宽度或高度与容器的宽度或高度相等，背景图像始终被包含在容器内。
+            */
+            /* background-size: cover; */
+
+            background-size: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+    </div>
+    
+</body>
+</html>
